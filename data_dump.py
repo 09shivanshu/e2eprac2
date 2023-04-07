@@ -2,16 +2,16 @@ import pymongo
 import pandas as pd
 import json
 
-from sensor.config import mongo_client
+client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
 
-Data_File_Path = "/config/workspace/aps_failure_training_set1.csv"
-Database_Name = "aps"
-Collection_Name = "sensor"
+DATA_FILE_PATH = "/config/workspace/aps_failure_training_set1.csv"
+DATABASE_NAME = "aps"
+COLLECTION_NAME = "sensor"
 
 if __name__=="__main__":
-    df = pd.read_csv = (Data_File_Path)
-    print(f"Rows and columns : {df.shape}")
-    
+    df = pd.read_csv(DATA_FILE_PATH)
+    print(f"Rows and columns: {df.shape}")
+
     # convert dataframe to json so that we can dump these records to mongodb
     df.reset_index(drop = True, inplace = True)
 
@@ -19,5 +19,4 @@ if __name__=="__main__":
     print (json_record[0])
 
     #insert converted json record to mongo_db
-    mongo_client[Database_Name][Collection_Name].insert_many(json_record)
-    
+    client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
