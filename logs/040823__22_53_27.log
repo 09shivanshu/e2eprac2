@@ -1,0 +1,6 @@
+[ 2023-04-08 22:53:28,205 ] 22 root - INFO - Exporting collection data as pandas dataframe 
+[ 2023-04-08 22:53:28,205 ] 17 root - INFO - reading from database : {database_name} and collection {collection_name} 
+[ 2023-04-08 22:53:28,209 ] 19 root - INFO - Found columns:RangeIndex(start=0, stop=0, step=1) 
+[ 2023-04-08 22:53:28,209 ] 23 root - INFO - Row and col 
+[ 2023-04-08 22:53:28,209 ] 28 root - INFO - Save data in feature store 
+[ 2023-04-08 22:53:28,210 ] 34 root - INFO - Create feature store folder if not available 
